@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>COS 101.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #2aacb8;}
+.s5 { color: #5f826b; font-style: italic;}
+.s6 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+COS 101.py</font>
+</center></td></tr></table>
+<pre><span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;COS 101 assignment! &quot;</span><span class="s1">)</span>
+
+
+<span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;velocity&quot;</span><span class="s1">)</span>
+
+<span class="s3">def </span><span class="s0">calculate_velocity </span><span class="s1">(</span><span class="s0">displacement</span><span class="s1">, </span><span class="s0">time</span><span class="s1">):</span>
+    <span class="s3">if </span><span class="s0">time </span><span class="s1">== </span><span class="s4">0</span><span class="s1">:</span>
+        <span class="s3">return </span><span class="s2">&quot;Time cannot be zero.&quot;</span>
+    <span class="s0">velocity </span><span class="s1">= </span><span class="s0">displacement </span><span class="s1">/ </span><span class="s0">time</span>
+    <span class="s3">return </span><span class="s0">velocity</span>
+
+
+<span class="s3">def </span><span class="s0">main</span><span class="s1">():</span>
+    <span class="s3">try</span><span class="s1">:</span>
+        <span class="s0">displacement </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the displacement (in meters): &quot;</span><span class="s1">))</span>
+        <span class="s0">time </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the time (in seconds): &quot;</span><span class="s1">))</span>
+
+        <span class="s0">velocity </span><span class="s1">= </span><span class="s0">calculate_velocity</span><span class="s1">(</span><span class="s0">displacement</span><span class="s1">, </span><span class="s0">time</span><span class="s1">)</span>
+
+        <span class="s3">if </span><span class="s0">isinstance</span><span class="s1">(</span><span class="s0">velocity</span><span class="s1">, </span><span class="s0">str</span><span class="s1">):</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s0">velocity</span><span class="s1">)</span>
+        <span class="s3">else</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;The velocity is </span><span class="s3">{</span><span class="s0">velocity</span><span class="s3">} </span><span class="s2">in meters per second.&quot;</span><span class="s1">)</span>
+
+    <span class="s3">except </span><span class="s0">ValueError</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;Please enter valid numbers for displacement and time.&quot;</span><span class="s1">)</span>
+
+
+<span class="s3">if </span><span class="s0">__name__ </span><span class="s1">== </span><span class="s2">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s0">main</span><span class="s1">()</span>
+
+<span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;speed &quot;</span><span class="s1">)</span>
+
+<span class="s3">def </span><span class="s0">calculate_speed</span><span class="s1">(</span><span class="s0">distance</span><span class="s1">, </span><span class="s0">time</span><span class="s1">):</span>
+    <span class="s5">&quot;&quot;&quot;Calculate speed (s = d / t)&quot;&quot;&quot;</span>
+    <span class="s3">if </span><span class="s0">time </span><span class="s1">&lt;= </span><span class="s4">0</span><span class="s1">:</span>
+        <span class="s3">raise </span><span class="s0">ValueError</span><span class="s1">(</span><span class="s2">&quot;Time must be greater than zero.&quot;</span><span class="s1">)</span>
+    <span class="s3">return </span><span class="s0">distance </span><span class="s1">/ </span><span class="s0">time</span>
+
+<span class="s3">def </span><span class="s0">main</span><span class="s1">():</span>
+    <span class="s3">try</span><span class="s1">:</span>
+        <span class="s6"># Get user input</span>
+        <span class="s0">distance </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the distance traveled (in meters): &quot;</span><span class="s1">))</span>
+        <span class="s0">time </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the time taken (in seconds): &quot;</span><span class="s1">))</span>
+
+        <span class="s6"># Calculate speed</span>
+        <span class="s0">speed </span><span class="s1">= </span><span class="s0">calculate_speed</span><span class="s1">(</span><span class="s0">distance</span><span class="s1">, </span><span class="s0">time</span><span class="s1">)</span>
+
+        <span class="s6"># Display the result</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;The speed is </span><span class="s3">{</span><span class="s0">speed</span><span class="s3">:</span><span class="s2">.2f</span><span class="s3">} </span><span class="s2">meters per second (m/s).&quot;</span><span class="s1">)</span>
+    <span class="s3">except </span><span class="s0">ValueError </span><span class="s3">as </span><span class="s0">e</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;Error: </span><span class="s3">{</span><span class="s0">e</span><span class="s3">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+
+<span class="s3">if </span><span class="s0">__name__ </span><span class="s1">== </span><span class="s2">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s0">main</span><span class="s1">()</span>
+
+<span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;momentum &quot;</span><span class="s1">)</span>
+
+<span class="s3">def </span><span class="s0">calculate_momentum</span><span class="s1">(</span><span class="s0">mass</span><span class="s1">, </span><span class="s0">velocity</span><span class="s1">):</span>
+    <span class="s5">&quot;&quot;&quot;Calculate momentum (p = m * v)&quot;&quot;&quot;</span>
+    <span class="s3">return </span><span class="s0">mass </span><span class="s1">* </span><span class="s0">velocity</span>
+
+<span class="s3">def </span><span class="s0">main</span><span class="s1">():</span>
+    <span class="s3">try</span><span class="s1">:</span>
+        <span class="s6"># Get user input</span>
+        <span class="s0">mass </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the mass (in kilograms): &quot;</span><span class="s1">))</span>
+        <span class="s0">velocity </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the velocity (in meters per second): &quot;</span><span class="s1">))</span>
+
+        <span class="s6"># Calculate momentum</span>
+        <span class="s0">momentum </span><span class="s1">= </span><span class="s0">calculate_momentum</span><span class="s1">(</span><span class="s0">mass</span><span class="s1">, </span><span class="s0">velocity</span><span class="s1">)</span>
+
+        <span class="s6"># Display the result</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;The momentum is </span><span class="s3">{</span><span class="s0">momentum</span><span class="s3">:</span><span class="s2">.2f</span><span class="s3">} </span><span class="s2">kg*m/s.&quot;</span><span class="s1">)</span>
+    <span class="s3">except </span><span class="s0">ValueError </span><span class="s3">as </span><span class="s0">e</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;Error: </span><span class="s3">{</span><span class="s0">e</span><span class="s3">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+
+<span class="s3">if </span><span class="s0">__name__ </span><span class="s1">== </span><span class="s2">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s0">main</span><span class="s1">()</span>
+
+<span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;pressure &quot;</span><span class="s1">)</span>
+
+<span class="s3">def </span><span class="s0">calculate_pressure</span><span class="s1">(</span><span class="s0">force</span><span class="s1">, </span><span class="s0">area</span><span class="s1">):</span>
+    <span class="s5">&quot;&quot;&quot;Calculate pressure (P = F / A)&quot;&quot;&quot;</span>
+    <span class="s3">if </span><span class="s0">area </span><span class="s1">&lt;= </span><span class="s4">0</span><span class="s1">:</span>
+        <span class="s3">raise </span><span class="s0">ValueError</span><span class="s1">(</span><span class="s2">&quot;Area must be greater than zero.&quot;</span><span class="s1">)</span>
+    <span class="s3">return </span><span class="s0">force </span><span class="s1">/ </span><span class="s0">area</span>
+
+<span class="s3">def </span><span class="s0">main</span><span class="s1">():</span>
+    <span class="s3">try</span><span class="s1">:</span>
+        <span class="s6"># Get user input</span>
+        <span class="s0">force </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the force applied (in Newtons): &quot;</span><span class="s1">))</span>
+        <span class="s0">area </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the area over which the force is applied (in square meters): &quot;</span><span class="s1">))</span>
+
+        <span class="s6"># Calculate pressure</span>
+        <span class="s0">pressure </span><span class="s1">= </span><span class="s0">calculate_pressure</span><span class="s1">(</span><span class="s0">force</span><span class="s1">, </span><span class="s0">area</span><span class="s1">)</span>
+
+        <span class="s6"># Display the result</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;The pressure is </span><span class="s3">{</span><span class="s0">pressure</span><span class="s3">:</span><span class="s2">.2f</span><span class="s3">} </span><span class="s2">Pascals (Pa).&quot;</span><span class="s1">)</span>
+    <span class="s3">except </span><span class="s0">ValueError </span><span class="s3">as </span><span class="s0">e</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;Error: </span><span class="s3">{</span><span class="s0">e</span><span class="s3">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+
+<span class="s3">if </span><span class="s0">__name__ </span><span class="s1">== </span><span class="s2">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s0">main</span><span class="s1">()</span>
+
+<span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;impulse &quot;</span><span class="s1">)</span>
+
+<span class="s3">def </span><span class="s0">calculate_impulse</span><span class="s1">(</span><span class="s0">force</span><span class="s1">, </span><span class="s0">time</span><span class="s1">):</span>
+    <span class="s5">&quot;&quot;&quot;Calculate impulse (J = F * Δt)&quot;&quot;&quot;</span>
+    <span class="s3">return </span><span class="s0">force </span><span class="s1">* </span><span class="s0">time</span>
+
+<span class="s3">def </span><span class="s0">main</span><span class="s1">():</span>
+    <span class="s3">try</span><span class="s1">:</span>
+        <span class="s6"># Get user input</span>
+        <span class="s0">force </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the force applied (in Newtons): &quot;</span><span class="s1">))</span>
+        <span class="s0">time </span><span class="s1">= </span><span class="s0">float</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;Enter the time duration (in seconds): &quot;</span><span class="s1">))</span>
+
+        <span class="s6"># Calculate impulse</span>
+        <span class="s0">impulse </span><span class="s1">= </span><span class="s0">calculate_impulse</span><span class="s1">(</span><span class="s0">force</span><span class="s1">, </span><span class="s0">time</span><span class="s1">)</span>
+
+        <span class="s6"># Display the result</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;The impulse is </span><span class="s3">{</span><span class="s0">impulse</span><span class="s3">:</span><span class="s2">.2f</span><span class="s3">} </span><span class="s2">Newton/seconds (Ns).&quot;</span><span class="s1">)</span>
+    <span class="s3">except </span><span class="s0">ValueError </span><span class="s3">as </span><span class="s0">e</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;Error: </span><span class="s3">{</span><span class="s0">e</span><span class="s3">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+
+<span class="s3">if </span><span class="s0">__name__ </span><span class="s1">== </span><span class="s2">&quot;__main__&quot;</span><span class="s1">:</span>
+    <span class="s0">main</span><span class="s1">()</span>
+</pre>
+</body>
+</html>
